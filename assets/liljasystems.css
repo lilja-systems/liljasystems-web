@@ -1,0 +1,171 @@
+/* Lilja Systems – webbplats. Mörk grund, loggans gröna (#33FF7A), Source Sans 3 och IBM Plex Mono. */
+@font-face{font-family:"Source Sans 3";font-style:normal;font-weight:400;font-display:swap;src:url(fonts/source-sans-3-latin-400.woff2) format("woff2")}
+@font-face{font-family:"Source Sans 3";font-style:normal;font-weight:600;font-display:swap;src:url(fonts/source-sans-3-latin-600.woff2) format("woff2")}
+@font-face{font-family:"Source Sans 3";font-style:normal;font-weight:700;font-display:swap;src:url(fonts/source-sans-3-latin-700.woff2) format("woff2")}
+@font-face{font-family:"IBM Plex Mono";font-style:normal;font-weight:500;font-display:swap;src:url(fonts/ibm-plex-mono-latin-500.woff2) format("woff2")}
+@font-face{font-family:"IBM Plex Mono";font-style:normal;font-weight:600;font-display:swap;src:url(fonts/ibm-plex-mono-latin-600.woff2) format("woff2")}
+
+:root{
+  --night:#0F1713; --night2:#16211B; --night3:#1E2B24; --line-dark:#35463B;
+  --green:#33FF7A; --green-dim:rgba(51,255,122,.2); --paper:#F5F7F6; --paper-dim:#DCE3DF; --muted-dark:#A3B1A9;
+  --ink:#14251F; --muted:#52615A; --line:#C9D2CC; --stop:#F3A99E; --ok:#236640; --attn:#7A4B00;
+  --font:"Source Sans 3", system-ui, -apple-system, "Segoe UI", sans-serif;
+  --mono:"IBM Plex Mono", ui-monospace, "SFMono-Regular", Menlo, monospace;
+  color-scheme:dark;
+}
+*,*::before,*::after{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%;scroll-behavior:smooth;scroll-padding-top:24px}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+body{margin:0;background:var(--night);color:#fff;font-family:var(--font);font-size:18px;line-height:1.5}
+img,svg{display:block;max-width:100%}
+a{color:var(--green)}
+a:focus-visible,button:focus-visible,summary:focus-visible{outline:3px solid #7FB2E5;outline-offset:2px;border-radius:2px}
+h1,h2,h3,p,ul,ol,dl,dd,figure{margin:0}
+h1,h2{text-wrap:balance}
+.skip{position:absolute;left:-9999px;top:8px;background:var(--green);color:var(--ink);padding:10px 16px;z-index:10}
+.skip:focus{left:8px}
+.wrap{max-width:1248px;margin:0 auto;padding-inline:24px}
+@media (max-width:600px){.wrap{padding-inline:16px}}
+
+.mono-label{font-family:var(--mono);font-size:14px;line-height:20px;font-weight:500;letter-spacing:.06em;text-transform:uppercase;color:var(--green)}
+.eyebrow{font-size:14px;line-height:20px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:var(--ok)}
+.display{font-size:clamp(40px,5.6vw,72px);line-height:1.03;font-weight:700;letter-spacing:-.025em}
+.display span{display:block;color:var(--green)}
+.h2{font-size:clamp(28px,3.2vw,44px);line-height:1.18;font-weight:700;letter-spacing:-.015em}
+.lead{font-size:clamp(19px,1.8vw,22px);line-height:1.5;color:var(--paper-dim)}
+.dim{color:var(--paper-dim)}
+.muted{color:var(--muted)}
+.measure{max-width:46rem}
+.stack{display:flex;flex-direction:column;gap:16px}
+.stack-24{display:flex;flex-direction:column;gap:24px}
+.row{display:flex;flex-wrap:wrap;align-items:center;gap:16px 24px}
+
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;min-height:48px;padding:12px 20px;border-radius:4px;background:var(--green);color:var(--ink);font-size:16px;line-height:22px;font-weight:600;text-decoration:none}
+.btn:hover{background:#6bff9c}
+.btn svg{width:20px;height:20px}
+.link{display:inline-flex;align-items:center;gap:6px;min-height:44px;font-weight:600;color:var(--paper);text-underline-offset:4px}
+.link svg{width:18px;height:18px}
+@media (max-width:600px){.btn--block-sm{width:100%}}
+
+/* Sidhuvud */
+.top{border-bottom:1px solid var(--line-dark)}
+.top-in{display:flex;align-items:center;justify-content:space-between;gap:24px;padding-block:22px}
+.brand{display:flex;align-items:center;min-height:44px}
+.brand img{width:200px;height:auto}
+.nav{display:flex;align-items:center;gap:28px}
+.nav a:not(.btn){color:var(--paper);font-size:17px;font-weight:600;text-decoration:none;padding:10px 4px}
+.menu{display:none;position:relative}
+.menu summary{list-style:none;width:48px;height:48px;display:flex;align-items:center;justify-content:center;border:1px solid var(--line-dark);border-radius:4px;cursor:pointer;color:#fff}
+.menu summary::-webkit-details-marker{display:none}
+.menu nav{position:absolute;right:0;top:56px;z-index:5;background:var(--night2);border:1px solid var(--line-dark);border-radius:8px;padding:8px;display:flex;flex-direction:column;min-width:240px}
+.menu nav a{padding:12px 14px;color:#fff;text-decoration:none;font-weight:600;border-radius:4px}
+.menu nav a:hover{background:var(--night3)}
+@media (max-width:900px){.nav{display:none}.menu{display:block}.top-in{padding-block:14px}.brand img{width:150px}}
+
+/* Sektioner */
+.sec{padding-block:104px}
+.sec--alt{background:var(--night2)}
+.sec--line{border-top:1px solid var(--line-dark)}
+.sec--light{background:var(--paper);color:var(--ink)}
+.sec-in{display:flex;flex-direction:column;gap:48px}
+@media (max-width:600px){.sec{padding-block:56px}.sec-in{gap:32px}}
+.hero{padding-block:96px}
+@media (max-width:600px){.hero{padding-block:44px 56px}}
+.hero-grid{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:64px;align-items:center}
+@media (max-width:1060px){.hero-grid{grid-template-columns:minmax(0,1fr);gap:40px}}
+.split{display:grid;grid-template-columns:minmax(0,6fr) minmax(0,5fr);gap:80px;align-items:center}
+@media (max-width:960px){.split{grid-template-columns:minmax(0,1fr);gap:32px}}
+.grid3{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:20px}
+.grid2{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:20px}
+@media (max-width:900px){.grid3,.grid2{grid-template-columns:minmax(0,1fr);gap:12px}}
+
+/* Fabriksgolvet */
+.floor-wrap{display:flex;flex-direction:column;gap:16px}
+.floor{display:grid;grid-template-columns:repeat(11,36px);gap:6px;width:max-content}
+.floor span{width:36px;height:36px;background:var(--night3)}
+.floor .path{background:var(--green-dim)}
+.floor .st{background:var(--green);color:var(--ink);display:flex;align-items:center;justify-content:center;font-family:var(--mono);font-size:13px;font-weight:600}
+.floor .goal{background:transparent;border:3px solid var(--green)}
+.floor-legend{font-family:var(--mono);font-size:13px;line-height:22px;letter-spacing:.04em;color:var(--muted-dark)}
+@media (max-width:600px){.floor{grid-template-columns:repeat(11,24px);gap:5px}.floor span{width:24px;height:24px}.floor .st{font-size:9px}}
+@media (max-width:360px){.floor{grid-template-columns:repeat(11,20px);gap:4px}.floor span{width:20px;height:20px}}
+
+/* Linjen */
+.line{list-style:none;padding:0;display:grid;grid-template-columns:repeat(6,minmax(0,1fr))}
+.line li{display:flex;flex-direction:column;gap:22px;min-width:0}
+.line-row{display:flex;align-items:center}
+.line .sq{width:52px;height:52px;flex-shrink:0;background:var(--green);color:var(--ink);display:flex;align-items:center;justify-content:center;font-family:var(--mono);font-size:21px;font-weight:600}
+.line .ln{height:3px;flex-grow:1;background:var(--green)}
+.line li:last-child .ln{flex-grow:0;width:20px;height:20px;background:transparent;border:3px solid var(--green);margin-left:12px}
+.st-body{display:flex;flex-direction:column;gap:10px;padding-right:28px}
+.st-body h3{font-size:26px;line-height:30px;font-weight:700}
+.st-line{font-size:18px;line-height:26px;font-weight:600;color:var(--paper);min-height:78px}
+.st-body dl{display:flex;flex-direction:column;gap:12px;padding-top:14px;border-top:1px solid var(--line-dark)}
+.st-body dt{font-family:var(--mono);font-size:12px;line-height:18px;font-weight:500;letter-spacing:.06em;text-transform:uppercase;color:var(--muted-dark)}
+.st-body dt.stop{color:var(--stop)}
+.st-body dd{font-size:16px;line-height:23px;color:var(--paper)}
+.st-body dd.out{color:var(--green)}
+@media (max-width:1100px){
+  .line{grid-template-columns:minmax(0,1fr)}
+  .line li{position:relative;flex-direction:row;gap:14px;padding-bottom:32px}
+  .line li:last-child{padding-bottom:0}
+  .line-row{flex-direction:column;align-self:stretch}
+  .line .sq{width:40px;height:40px;font-size:16px}
+  .line .ln{width:2px;height:auto;flex-grow:1;opacity:.5;margin-top:6px}
+  .line li:last-child .ln{display:none}
+  .st-body{padding-right:0;flex-grow:1}
+  .st-line{min-height:0}
+  .st-body h3{font-size:24px}
+}
+
+/* Kort på mörk grund */
+.dcard{background:var(--night2);border:1px solid var(--line-dark);border-radius:8px;padding:32px;display:flex;flex-direction:column;gap:16px}
+.dcard h3{font-size:24px;line-height:30px;font-weight:600}
+.dcard p{color:var(--paper-dim);font-size:17px;line-height:26px}
+.dcard .mono-label{color:var(--green)}
+.bignum{font-family:var(--mono);font-size:64px;line-height:1;font-weight:500;color:var(--green)}
+@media (max-width:600px){.dcard{padding:24px}.bignum{font-size:48px}}
+.hw-lockup img{width:320px;height:auto}
+.hw-lockup p{margin:8px 0 0 77px;font-size:13.9px;line-height:1.2;color:#fff;white-space:nowrap}
+@media (max-width:600px){.hw-lockup img{width:260px}.hw-lockup p{margin-left:63px;font-size:11.3px}}
+
+/* Kvittot */
+.receipt{background:#fff;color:var(--ink);border:1px solid var(--line);border-radius:8px;padding:32px;box-shadow:0 1px 2px rgba(20,37,31,.06),0 12px 32px rgba(20,37,31,.10)}
+.rc-head{display:flex;flex-direction:column;gap:4px;padding-bottom:14px}
+.rc-title{font-family:var(--mono);font-size:15px;font-weight:600;letter-spacing:.08em}
+.rc-sub{font-size:15px;color:var(--muted)}
+.rc-row{display:flex;flex-direction:column;gap:6px;padding:14px 0;border-top:1px dashed var(--line)}
+.rc-k{font-family:var(--mono);font-size:12px;letter-spacing:.06em;text-transform:uppercase;color:var(--muted)}
+.rc-row ul{list-style:none;padding:0;display:flex;flex-direction:column;gap:6px}
+.rc-row li{display:flex;gap:8px;align-items:flex-start;font-size:16px;line-height:22px}
+.rc-row li > span:first-child{margin-top:2px;flex-shrink:0}
+.rc-row li svg{width:18px;height:18px}
+.rc-row .ok{color:var(--ok)}
+.rc-row .attn{color:var(--attn)}
+@media (max-width:600px){.receipt{padding:24px}}
+
+/* Sidfot */
+.foot{border-top:1px solid var(--line-dark);padding-block:64px 24px}
+.foot-top{display:flex;justify-content:space-between;align-items:flex-start;gap:32px;flex-wrap:wrap}
+.foot-logo{width:220px;height:auto}
+.foot-links{display:flex;flex-direction:column;gap:4px}
+.foot-links a{display:flex;align-items:center;min-height:32px;color:var(--paper-dim);text-decoration:none;font-size:16px}
+.foot-links a:hover{color:#fff}
+.foot-bottom{margin-top:40px;border-top:1px solid var(--line-dark);padding-top:20px;display:flex;justify-content:space-between;gap:8px;flex-wrap:wrap;font-size:14px;color:var(--muted-dark)}
+@media (max-width:600px){.foot{padding-block:40px 24px}.foot-logo{width:170px}.foot-bottom{flex-direction:column}}
+
+/* Integritet och företagsuppgifter (R03) */
+.legal-page{padding-top:80px}
+.legal{max-width:46rem;display:flex;flex-direction:column;gap:44px}
+.legal-intro{font-size:21px;line-height:30px}
+.legal-sec{display:flex;flex-direction:column;gap:12px;padding-top:28px;border-top:1px solid var(--line-dark)}
+.legal-sec h2{font-size:26px;line-height:32px;font-weight:700;letter-spacing:-.01em}
+.legal .firm{display:grid;grid-template-columns:max-content 1fr;gap:10px 24px}
+.legal .firm div{display:contents}
+.legal .firm dt{color:var(--muted-dark)}
+.legal .firm dd{font-weight:600}
+.legal-updated{font-size:15px;color:var(--muted-dark)}
+@media (max-width:600px){.legal-page{padding-top:48px}.legal{gap:36px}.legal-intro{font-size:19px;line-height:28px}.legal-sec h2{font-size:22px;line-height:28px}.legal .firm{grid-template-columns:1fr;gap:2px}.legal .firm dd{margin-bottom:10px}}
+.display--s{font-size:clamp(36px,4.4vw,56px);line-height:1.07}
+.legal .firm dd{color:#fff}
+.small-mail{font-size:16px;line-height:24px}
